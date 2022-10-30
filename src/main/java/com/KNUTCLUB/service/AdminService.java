@@ -1,7 +1,7 @@
 package com.KNUTCLUB.service;
 
-import com.KNUTCLUB.domain.Member;
-import com.KNUTCLUB.repository.MemberRepository;
+import com.KNUTCLUB.domain.Admin;
+import com.KNUTCLUB.repository.AdminRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -9,16 +9,16 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-public class MemberService {
+public class AdminService {
 
-    private final MemberRepository memberRepository;
+    private final AdminRepository adminRepository;
 
-    public Optional<Member> findById(String id) {
-        return memberRepository.findById(id);
+    public Optional<Admin> findById(String id) {
+        return adminRepository.findById(id);
     }
 
     public String login(String id, String pw) {
-        Member login = memberRepository.findById(id).orElseThrow();
+        Admin login = adminRepository.findById(id).orElseThrow();
         if (login.getPassword().equals(pw)) {
             return "Success";
         }
