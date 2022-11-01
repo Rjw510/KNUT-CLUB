@@ -14,8 +14,25 @@ import javax.persistence.*;
 public class Member {
 
     @Id
+    @Column(name = "student_id")
     private String studentId;
 
-    @Column
     private String password;
+
+    private String name;
+
+    private String department;
+
+    private String birth;
+
+    private String gender;
+
+    private String phone;
+
+    private String address;
+
+    @Column(name = "detail_address")
+    private String detailAddress;
+
+//    private String club;
 }

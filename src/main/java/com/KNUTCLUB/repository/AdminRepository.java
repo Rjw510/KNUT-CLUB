@@ -18,6 +18,11 @@ public class AdminRepository {
         this.em = em;
     }
 
+    public Admin save(Admin admin) {
+        em.persist(admin);
+        return admin;
+    }
+
     public Optional<Admin> findById(String id) {
         Admin admin = em.find(Admin.class, id);
         return Optional.ofNullable(admin);

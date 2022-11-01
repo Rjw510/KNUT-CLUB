@@ -19,6 +19,14 @@ public class Admin {
     @Id
     private String clubId;
 
-    @Column
     private String password;
+
+    @Column(name = "club_name")
+    private String clubName;
+
+    private String name;
+
+    private String email;
+
+    private String phone;
 }

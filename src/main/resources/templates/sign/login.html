@@ -20,7 +20,7 @@
         </div>
         <!-- 회원 로그인 -->
         <div id="tab1" class="tabcontent" style="display: block;">
-            <form class="login-Form" th:action="@{/login}" method="post">
+            <form class="login-Form" th:action="@{/sign/login}" method="post">
                 <h2>회원 로그인</h2>
                 <div class="login-Form-inner" th:object="${login}">
                     <div class="idform">
@@ -33,17 +33,19 @@
                     </div>
                     <button id="btn" type="submit"><strong>로그인</strong></button>
                     <div class="links">
-                        <button class="links-btn" type="button" th:onclick="|location.href='@{/check}'|">
+                        <button class="links-btn" type="button" th:onclick="|location.href='@{/sign/check}'|">
                             <strong>회원가입</strong>
                         </button>
                     </div>
                 </div>
-                <button class="findBtn" id="findPassword" type="button" onclick="window.open('/findPw')"><strong>비밀번호 재설정</strong></button>
+                <button class="findBtn" id="findPassword" type="button" th:onclick="|location.href='@{/sign/findPw}'|">
+                    <strong>비밀번호 재설정</strong>
+                </button>
             </form>
         </div>
         <!-- 관리자 로그인 -->
         <div id="tab2" class="tabcontent" style="display: none;">
-            <form class="login-Form" th:action="@{/adminLogin}" method="post">
+            <form class="login-Form" th:action="@{/sign/login/admin}" method="post">
                 <h2>관리자 로그인</h2>
                 <div class="login-Form-inner" th:object="${adminLogin}">
                     <div class="idform">
@@ -57,7 +59,7 @@
                     <!--<button id="second-btn" type="submit"><strong>로그인</strong></button>-->
                     <button id="second-btn" type="submit"><strong>로그인</strong></button>
                     <div class="links">
-                        <button style="margin-top: 50px" class="links-btn" type="button" th:onclick="|location.href='@{/check/admin}'|">
+                        <button style="margin-top: 50px" class="links-btn" type="button" th:onclick="|location.href='@{/sign/check/admin}'|">
                             <strong>관리자 회원가입</strong>
                         </button>
                     </div>
